@@ -89,7 +89,7 @@ function generate() {
         sz * (ca * sb * cc + sa * sc), sz * (ca * sb * sc - sa * cc), sz * ca * cb, tz,
         0,                             0,                             0,            1
     ];
-    return "[" + matrix.join(",") + "]";
+    return "[" + matrix.join("f,") + "f]";
 }
 
 function updateCSS() {
