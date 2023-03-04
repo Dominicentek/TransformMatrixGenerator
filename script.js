@@ -95,7 +95,7 @@ function generate() {
 function updateCSS() {
     let style = document.querySelector(":root").style;
     style.setProperty("--translate-x", settings.translateX);
-    style.setProperty("--translate-y", settings.translateY);
+    style.setProperty("--translate-y", -settings.translateY);
     style.setProperty("--translate-z", settings.translateZ);
     style.setProperty("--scale-x", settings.scaleX);
     style.setProperty("--scale-y", settings.scaleY);
