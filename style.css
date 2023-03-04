@@ -1,0 +1,121 @@
+:root {
+    --translate-x: 0;
+    --translate-y: 0;
+    --translate-z: 0;
+    --scale-x: 1;
+    --scale-y: 1;
+    --scale-z: 1;
+    --rotation-yaw: 0deg;
+    --rotation-pitch: 0deg;
+    --rotation-roll: 0deg;
+    --cube-size: 100px;
+}
+html {
+    height: 100%;
+}
+body {
+    background-color: #202020;
+    color: #00af00;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    user-select: none;
+    display: grid;
+    padding: 10px;
+    margin: 0;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 5fr;
+    grid-template-rows: 100px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+div, .button {
+    background-color: #303030;
+    border-radius: 10px;
+}
+.center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    font-size: 36px;
+}
+input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+}
+.output {
+    width: 100%;
+    height: 100%;
+}
+.button {
+    transition: 0.5s;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #404040;
+}
+.cube {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background: none;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 1s;
+    transform: translateX(calc(var(--translate-x) * var(--cube-size))) translateY(calc(var(--translate-y) * var(--cube-size))) translateZ(calc(var(--translate-z) * var(--cube-size))) scaleX(var(--scale-x)) scaleY(var(--scale-y)) scaleZ(var(--scale-z)) rotateX(var(--rotation-pitch)) rotateY(var(--rotation-yaw)) rotateZ(var(--rotation-roll));
+}
+.face {
+    border-radius: 0;
+    position: absolute;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    color: #fff;
+    line-height: var(--cube-size);
+    font-size: calc(0.16 * var(--cube-size));
+    text-align: center;
+    transition: 1s;
+}
+.scene {
+    background: none;
+    border-radius: 0;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 600px;
+    transition: 1s;
+}
+.front {
+    transform: rotateY(0deg) translateZ(calc(var(--cube-size) / 2));
+    background-color: #00f7;
+}
+.right {
+    transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2));
+    background-color: #f007;
+}
+.back {
+    transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2));
+    background-color: #0f07;
+    color: #000;
+}
+.left {
+    transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
+    background-color: #ff07;
+    color: #000;
+}
+.top {
+    transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2));
+    background-color: #f707;
+}
+.bottom {
+    transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
+    background-color: #f0f7;
+}

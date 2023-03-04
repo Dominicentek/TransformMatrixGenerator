@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D Transformation Matrix Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header center" style="grid-column: 3 / 4; grid-row: 1 / 2">
+        3D Transformation Matrix Generator
+    </div>
+    <div style="grid-column: 1 / 3; grid-row: 2 / 6"></div>
+    <div style="grid-column: 1 / 3; grid-row: 6 / 10"></div>
+    <div style="grid-column: 1 / 3; grid-row: 10 / 14"></div>
+    <div style="grid-column: 3 / 4; grid-row: 15 / 16">
+        <input nosetting contenteditable="false" value="test" class="output" id="output">
+    </div>
+    <div style="grid-column: 3 / 4; grid-row: 2 / 15; overflow: hidden" id="cube-container">
+        <div class="scene">
+            <div class="cube">
+                <div class="face top">Top</div>
+                <div class="face bottom">Bottom</div>
+                <div class="face front">Front</div>
+                <div class="face back">Back</div>
+                <div class="face left">Left</div>
+                <div class="face right">Right</div>
+            </div>
+        </div>
+    </div>
+    <div style="grid-column: 1 / 3; grid-row: 14 / 15"></div>
+    <div style="grid-column: 1 / 2; grid-row: 1 / 2"></div>
+    <text class="button center" style="grid-column: 1 / 2; grid-row: 15 / 16" onclick="resetSettings()">Reset Settings</text>
+    <text class="button center" style="grid-column: 2 / 3; grid-row: 15 / 16" onclick="copyText(document.getElementById('output').value)">Copy</text>
+    <text class="button center" style="grid-column: 2 / 3; grid-row: 1 / 2" onclick="window.location = 'https://github.com/Dominicentek/TransformMatrixGenerator'">GitHub</text>
+    <text class="center" style="grid-column: 1 / 3; grid-row: 2 / 3">
+        Translation
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 3 / 4">
+        X
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 4 / 5">
+        Y
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 5 / 6">
+        Z
+    </text>
+    <text class="center" style="grid-column: 1 / 3; grid-row: 6 / 7">
+        Scale
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 7 / 8">
+        X
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 8 / 9">
+        Y
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 9 / 10">
+        Z
+    </text>
+    <text class="center" style="grid-column: 1 / 3; grid-row: 10 / 11">
+        Rotation
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 11 / 12">
+        Yaw
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 12 / 13">
+        Pitch
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 13 / 14">
+        Roll
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 14 / 15">
+        Cube Size (px)
+    </text>
+    <text class="center" style="grid-column: 1 / 2; grid-row: 1 / 2">Created by Dominicentek</text>
+    <input varname="translateX" style="grid-column: 2 / 3; grid-row: 3 / 4" value="0">
+    <input varname="translateY" style="grid-column: 2 / 3; grid-row: 4 / 5" value="0">
+    <input varname="translateZ" style="grid-column: 2 / 3; grid-row: 5 / 6" value="0">
+    <input varname="scaleX" style="grid-column: 2 / 3; grid-row: 7 / 8" value="1">
+    <input varname="scaleY" style="grid-column: 2 / 3; grid-row: 8 / 9" value="1">
+    <input varname="scaleZ" style="grid-column: 2 / 3; grid-row: 9 / 10" value="1">
+    <input varname="rotationYaw" style="grid-column: 2 / 3; grid-row: 11 / 12" value="0">
+    <input varname="rotationPitch" style="grid-column: 2 / 3; grid-row: 12 / 13" value="0">
+    <input varname="rotationRoll" style="grid-column: 2 / 3; grid-row: 13 / 14" value="0">
+    <input varname="cubeSize" style="grid-column: 2 / 3; grid-row: 14 / 15" value="100">
+</body>
+</html>
